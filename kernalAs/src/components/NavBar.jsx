@@ -1,10 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import logo from "../assets/mern-media-logo.png"
+import { FaRegUserCircle } from "react-icons/fa";
 import avatar from "../assets/avatar.svg"
 import { auth } from '../firebase/firebase'
 import { Link, useNavigate } from 'react-router-dom'
+import { IoIosLogOut } from "react-icons/io";
+
 const NavBar = () => {
     const [islogged, setIslogged] = useState(false);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const dropItems = [
+        {
+            name: "Account",
+            icon: FaRegUserCircle,
+        },
+        {
+            name: "Logout",
+            icon: IoIosLogOut
+        }
+    ]
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
     useEffect(() => {
 
         setTimeout(() => {
@@ -25,7 +44,8 @@ const NavBar = () => {
             </div>
             <div className=''>
                 <div className='flex items-center max-sm:hidden '>
-                    <div>
+                    <div >
+
                         <Link to={"/dash"} className='text-white p-2'>Dashboard</Link>
                     </div>
                     <div>
@@ -40,11 +60,22 @@ const NavBar = () => {
                 </div>
             </div>
             {islogged ? (
+
                 <div>
-                    <Link to={"/profile"} className='text-white p-2 max-sm:hidden'>
+                    <button onClick={toggleDropdown} className='text-white p-2 max-sm:hidden'>
                         <img className='w-8 h-8' src={avatar}>
                         </img>
-                    </Link>
+                    </button>
+                    {isOpen && (
+                        <div className="absolute  right-0 mt-2 w-48 bg-gray-800 border border-gray-400  rounded shadow-md p-2">
+                            {dropItems.map((item) =>
+                                <Link to={"#"} className=" w-full flex gap-5 justify-start items-center py-2 px-4 text-white hover:bg-gray-300 hover:text-black rounded-md">
+                                    <item.icon />
+                                    {item.name}
+                                </Link>
+                            )}
+                        </div>
+                    )}
                 </div>
 
             ) : (

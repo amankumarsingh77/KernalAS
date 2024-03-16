@@ -29,7 +29,6 @@ const Login = () => {
     useEffect(() => {
         checkCurrentUser();
 
-
     }, [auth]);
 
     const handleChange = (e) => {

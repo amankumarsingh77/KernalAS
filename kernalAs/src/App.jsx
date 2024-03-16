@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import PriceCard from "./components/pricing/PriceCard";
 import PriceMain from "./components/pricing/PriceMain";
 import Success from "./components/pricing/Success";
+import Contacus from "./containers/Contacus";
 
 export default function App() {
 
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/chat/:bot_slug" element={<ChatPage />} />
             <Route path="/pricing" element={<PriceMain />} />
             <Route path="/payment/success" element={<Success />} />
+            <Route path="/contactus" element={<Contacus />} />
           </Routes>
         </div>
       </Router>

@@ -4,7 +4,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 import { auth, db } from '../../firebase/firebase';
-import { useUpload } from '../../hooks/r2'; //custom hook
+import { useUpload } from '../../hooks/r2';
 import FileSelector from './FileSelector';
 import { useRecoilValue } from 'recoil';
 import { fileType, isDropEnabled } from '../../context/atoms';
@@ -12,7 +12,7 @@ import { useAddSource } from '../../hooks/addSource';
 import { Toaster, toast } from 'sonner';
 
 
-const Dialog = ({ setIsOpen, isOpen, onClose, successToast,errorToast }) => {
+const Dialog = ({ setIsOpen, isOpen, onClose, successToast, errorToast }) => {
     const embedding_model = "open_ai"
     const isDropdownEnabled = useRecoilValue(isDropEnabled);
     const mainfileType = useRecoilValue(fileType)

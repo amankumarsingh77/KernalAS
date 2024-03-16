@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { fileType, isDropEnabled } from '../../context/atoms';
+import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Space } from 'antd';
 
 const FileSelector = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -11,6 +13,28 @@ const FileSelector = () => {
         setDropdownVisible(!isDropdownVisible);
     };
 
+    const types = [
+        {
+            label: "PDF",
+            type: "pdf_file",
+            key: "1"
+        },
+        {
+            label: "DOC",
+            type: "doc_file",
+            key: "2"
+        },
+        {
+            label: "YT Video",
+            type: "youtube_video",
+            key: "3",
+        },
+        {
+            label: "Web Url",
+            type: "web_page",
+            key: "4"
+        }
+    ]
     const onValueClick = (selectedValue, key) => {
         setDropvalue(selectedValue);
         setFileType(key);
@@ -41,34 +65,17 @@ const FileSelector = () => {
                 <div className="origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg">
                     <div className="rounded-md bg-white shadow-xs">
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                            <a
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                role="menuitem"
-                                onClick={() => onValueClick('PDF', "pdf_file")}
-                            >
-                                PDF
-                            </a>
-                            <a
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                role="menuitem"
-                                onClick={() => onValueClick('DOC', "doc_file")}
-                            >
-                                Doc
-                            </a>
-                            <a
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                role="menuitem"
-                                onClick={() => onValueClick('YT Video', "youtube_video")}
-                            >
-                                YT Video
-                            </a>
-                            <a
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                role="menuitem"
-                                onClick={() => onValueClick('Web Url', "web_page")}
-                            >
-                                Web URL
-                            </a>
+                            {types.map((type) =>
+                                <a
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                    role="menuitem"
+                                    onClick={() => onValueClick(type.label, type.type)}
+                                >
+                                    {type.label}
+                                </a>
+
+                            )}
+
                         </div>
                     </div>
                 </div>

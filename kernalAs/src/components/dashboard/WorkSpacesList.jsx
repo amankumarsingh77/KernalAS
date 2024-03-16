@@ -13,10 +13,10 @@ const WorkspaceList = ({ workspaces }) => {
         navigate(`/chat/${id}`);
     }
 
-    const successToast = (message)=>{
+    const successToast = (message) => {
         toast.success(message);
     }
-    const errorToast  =()=>{
+    const errorToast = () => {
         toast.error(message);
     }
     const openWarning = (id) => {
@@ -37,7 +37,7 @@ const WorkspaceList = ({ workspaces }) => {
     };
     return (
         <div className="flex flex-wrap -m-4 p-4 ">
-            <Toaster richColors/>
+            <Toaster richColors />
             <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4 cursor-pointer">
                 <div className="bg-gray-800 rounded-lg p-6 shadow-md h-44 overflow-hidden flex items-center justify-center" onClick={openDialog}>
                     <p className='text-blue-500 text-3xl mr-2'>+</p>
@@ -46,12 +46,12 @@ const WorkspaceList = ({ workspaces }) => {
             </div>
 
             <Warning
-                            setIsOpen={setDeleteDialogOpen}
-                            isOpen={isDeleteDialogOpen}
-                            successToast={successToast}
-                            errorToast={errorToast}
-                            onClose={closeWarning}
-                            wid={deleteWorkspaceID.current}
+                setIsOpen={setDeleteDialogOpen}
+                isOpen={isDeleteDialogOpen}
+                successToast={successToast}
+                errorToast={errorToast}
+                onClose={closeWarning}
+                wid={deleteWorkspaceID.current}
             />
 
             <Dialog
@@ -75,9 +75,9 @@ const WorkspaceList = ({ workspaces }) => {
 
                 workspaces.map((workspace) => (
                     <>
-                        
 
-                        <div key={workspace.id} className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4 cursor-pointer">
+
+                        <div key={workspace.id} className=" w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4 cursor-pointer">
                             <div className="bg-gray-800 rounded-lg shadow-md p-6 h-full flex flex-col justify-between" onClick={() => onChatHandle(workspace.id)}>
                                 <div>
                                     <h3 className="text-lg font-semibold mb-4 text-white whitespace-normal">
@@ -87,7 +87,7 @@ const WorkspaceList = ({ workspaces }) => {
                                 </div>
                                 <div className='delete-button absolute bottom-4 right-4 p-3'>
 
-                                    <button
+                                    {/* <button
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             openWarning(workspace.id);
@@ -111,7 +111,7 @@ const WorkspaceList = ({ workspaces }) => {
                                             </svg>
                                             Button
                                         </svg>
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </div>
