@@ -1,0 +1,128 @@
+# Node.js
+node_modules/
+
+# npm
+package-lock.json
+npm-debug.log
+
+# Express.js
+.env
+
+# React
+/build
+/node_modules
+
+# MongoDB
+*.db
+*.log
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs and editors
+.idea/
+.project
+*.swp
+*.swo
+*.swn
+
+# OS generated files
+ehthumbs.db
+Thumbs.db
+
+# Vim
+*.un~
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Parcel
+.cache/
+dist/
+.cache-loader/
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# Jest
+coverage/
+
+# npm
+*.bak
+*.config.js
+*.config.ts
+*.log
+*.log.*
+*.log-*
+*.old
+*.orig
+*.pro
+*.pro.user
+*.pro.*
+
+# WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+*.jar
+out/
+output/
+.idea_modules/
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Visual Studio
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.user
+*.suo
+*.cache
+*.opensdf
+*.log
+[Tt]humbs.db
+*.manifest
+*.mdf
+*.ldf
+*.edb
+*.sdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.suo

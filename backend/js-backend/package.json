@@ -1,0 +1,23 @@
+{
+  "name": "js-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "module": "nodenext",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase": "^10.7.1",
+    "langchain": "^0.1.5",
+    "mongoose": "^8.0.3",
+    "razorpay": "^2.9.2",
+    "react-drag-drop-files": "^2.3.10"
+  }
+}
