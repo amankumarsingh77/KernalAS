@@ -48,7 +48,7 @@ export default function Sidebar() {
                 className="block h-auto w-12"
               />
               <span className="self-center text-2xl font-bold whitespace-nowrap text-white">
-                Kernal As
+                Studious
               </span>
             </Link>
             <ul className="space-y-2 font-medium text-lg">

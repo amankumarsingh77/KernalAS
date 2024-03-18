@@ -2,6 +2,7 @@ export const plans = [
     {
         name: "Starter",
         price: 99,
+        type: 1,
         features: [
             "10 Workspaces",
             "GPT 3.5 turbo access",
@@ -15,6 +16,7 @@ export const plans = [
     {
         name: "Ultimate",
         price: 199,
+        type: 2,
         features: [
             "25 Workspaces",
             "GPT 4 access",
@@ -25,5 +27,5 @@ export const plans = [
             "500mb cloud storage"
         ]
     },
-   
+
 ]

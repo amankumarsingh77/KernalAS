@@ -2,13 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
+
 import Logo from "../../assets/mern-media-logo.png"
 
 const provider = new GoogleAuthProvider();
 
 const Login = () => {
+
     const navigate = useNavigate();
+    console.log(auth?.currentUser);
+    useEffect(() => {
+        setTimeout(() => {
+            if (auth.currentUser) {
+                navigate("/dash")
+            }
+        }, 1000);
+    }, [auth.currentUser, auth])
+
 
     const loginRedirect = (page) => {
         navigate(`../${page}`);
@@ -92,7 +103,7 @@ const Login = () => {
             <div className="w-full md:w-2/5 bg-black flex justify-center items-center h-screen max-sm:hidden max-md:hidden">
                 <div className='flex items-center justify-center'>
                     <img className='w-14 h-14' src={Logo}></img>
-                    <h1 className="text-4xl font-bold p-2 text-white">KernalAs</h1>
+                    <h1 className="text-4xl font-bold p-2 text-white">Studious</h1>
 
                 </div>
             </div>

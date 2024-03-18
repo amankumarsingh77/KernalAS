@@ -1,6 +1,8 @@
 import React from 'react'
 import Tick from "../../assets/green-tick.gif"
 import { useLocation, useNavigate } from "react-router-dom";
+import { auth } from '../../firebase/firebase';
+import axios from 'axios';
 
 const Success = () => {
     const navigate = useNavigate();
@@ -20,18 +22,14 @@ const Success = () => {
         const hours = date.getHours();
         const minutes = date.getMinutes();
         const seconds = date.getSeconds();
+        // addsub()
 
         return `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day} ${hours}:${minutes}:${seconds}`;
     };
 
-    // Example usage
-
-
-
     const timeConverter = (timestamp) => {
         const date = new Date(timestamp * 1000); // Convert to milliseconds by multiplying with 1000
 
-        // Get individual components of the date
         const year = date.getFullYear();
         const month = date.getMonth() + 1; // Months are zero-indexed, so add 1
         const day = date.getDate();

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "module": "nodenext",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,11 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "firebase": "^10.7.1",
+    "jsonwebtoken": "^9.0.2",
     "langchain": "^0.1.5",
     "mongoose": "^8.0.3",
+    "nodemailer": "^6.9.12",
     "razorpay": "^2.9.2",
     "react-drag-drop-files": "^2.3.10"
   }

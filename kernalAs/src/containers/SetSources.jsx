@@ -82,14 +82,12 @@ export default function SetSources({
         })
 
     };
-
-
     const dataTypes = {
         youtube_video: "YouTube Video",
         pdf_file: "PDF File",
         web_page: "Web Page",
         doc_file: "Doc File",
-        sitemap: "Sitemap",
+        // sitemap: "Sitemap",
         text: "Text",
     };
 
@@ -98,7 +96,7 @@ export default function SetSources({
         pdf_file: <img className="w-5 h-5 mr-3" src={PDFIcon} alt="Your SVG" />,
         web_page: <img className="w-5 h-5 mr-3" src={WebIcon} alt="Your SVG" />,
         doc_file: <img className="w-5 h-5 mr-3" src={DocIcon} alt="Your SVG" />,
-        sitemap: <img className="w-5 h-5 mr-3" src={SitemapIcon} alt="Your SVG" />,
+        // sitemap: <img className="w-5 h-5 mr-3" src={SitemapIcon} alt="Your SVG" />,
         text: <img className="w-5 h-5 mr-3" src={TextIcon} alt="Your SVG" />,
     };
 

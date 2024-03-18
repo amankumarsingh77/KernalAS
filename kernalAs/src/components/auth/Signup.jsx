@@ -4,6 +4,7 @@ import { auth } from "../../firebase/firebase";
 import { GoogleAuthProvider } from "firebase/auth";
 
 import { Link, useNavigate } from "react-router-dom"
+import axios from 'axios';
 
 const provider = new GoogleAuthProvider();
 const Signup = () => {
@@ -63,6 +64,14 @@ const Signup = () => {
                 formData.email,
                 formData.password
             );
+            const userdoc = {
+                username: formData.username,
+                password: formData.password,
+                email: user.user.email,
+            }
+
+            const dbres = await axios.post("http://localhost:3000/user/signup", userdoc);
+            console.log(dbres);
 
             signupRedirect("dash")
         } catch (error) {

@@ -2,11 +2,9 @@ import Login from "./components/auth/Login"
 import Signup from "./components/auth/Signup"
 import ForgetPassword from "./components/auth/ForgetPassword"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { auth } from "./firebase/firebase";
 import DashMain from "./components/dashboard/DashMain";
 import ChatPage from "./pages/ChatPage";
 import NavBar from "./components/NavBar";
-import PriceCard from "./components/pricing/PriceCard";
 import PriceMain from "./components/pricing/PriceMain";
 import Success from "./components/pricing/Success";
 import Contacus from "./containers/Contacus";

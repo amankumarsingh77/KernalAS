@@ -3,23 +3,16 @@ import logo from "../assets/mern-media-logo.png"
 import { FaRegUserCircle } from "react-icons/fa";
 import avatar from "../assets/avatar.svg"
 import { auth } from '../firebase/firebase'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, redirect, useNavigate } from 'react-router-dom'
 import { IoIosLogOut } from "react-icons/io";
+
+
 
 const NavBar = () => {
     const [islogged, setIslogged] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
-    const dropItems = [
-        {
-            name: "Account",
-            icon: FaRegUserCircle,
-        },
-        {
-            name: "Logout",
-            icon: IoIosLogOut
-        }
-    ]
+
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -31,9 +24,16 @@ const NavBar = () => {
                 setIslogged(true);
             }
         }, 1000);
-    }, [auth.currentUser])
+    }, [auth.currentUser, auth])
+
+    const logout = () => {
+        auth.signOut();
+        redirect("/login");
+    }
 
     const navigate = useNavigate();
+
+
     const logoOnclick = () => {
         navigate("/dash");
     }
@@ -68,20 +68,22 @@ const NavBar = () => {
                     </button>
                     {isOpen && (
                         <div className="absolute  right-0 mt-2 w-48 bg-gray-800 border border-gray-400  rounded shadow-md p-2">
-                            {dropItems.map((item) =>
-                                <Link to={"#"} className=" w-full flex gap-5 justify-start items-center py-2 px-4 text-white hover:bg-gray-300 hover:text-black rounded-md">
-                                    <item.icon />
-                                    {item.name}
-                                </Link>
-                            )}
+                            <Link to={"#"} className=" w-full flex gap-5 justify-start items-center py-2 px-4 text-white hover:bg-gray-300 hover:text-black rounded-md">
+                                <FaRegUserCircle />
+                                <p>Account</p>
+                            </Link>
+                            <Link to={"#"} onClick={logout} className=" w-full flex gap-5 justify-start items-center py-2 px-4 text-white hover:bg-gray-300 hover:text-black rounded-md">
+                                < IoIosLogOut />
+                                <p>Logout</p>
+                            </Link>
                         </div>
                     )}
                 </div>
 
             ) : (
                 <div className='flex flex-cols'>
-                    <button className='border rounded-lg text-white px-2 py-3 '>Login</button>
-                    <button>Signup</button>
+                    <Link to={"/signup"} className='border rounded-lg text-white px-2 py-3 '>Signup</Link>
+                    {/* <button>Signup</button> */}
                 </div>
             )}
 
