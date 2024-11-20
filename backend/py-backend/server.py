@@ -10,6 +10,7 @@ from routes.sources import sources_bp
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(ROOT_DIRECTORY, "database", "user_data.db")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.register_blueprint(dashboard_bp)
 app.register_blueprint(sources_bp)
 app.register_blueprint(chat_response_bp)
