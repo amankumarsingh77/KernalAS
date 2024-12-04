@@ -28,10 +28,10 @@ const Success = () => {
     };
 
     const timeConverter = (timestamp) => {
-        const date = new Date(timestamp * 1000); // Convert to milliseconds by multiplying with 1000
+        const date = new Date(timestamp * 1000);
 
         const year = date.getFullYear();
-        const month = date.getMonth() + 1; // Months are zero-indexed, so add 1
+        const month = date.getMonth() + 1;
         const day = date.getDate();
         const hours = date.getHours();
         const minutes = date.getMinutes();

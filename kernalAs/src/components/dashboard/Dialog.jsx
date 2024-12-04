@@ -63,7 +63,7 @@ const Dialog = ({ setIsOpen, isOpen, onClose, successToast, errorToast }) => {
             setDisabled(false)
         }
     }, [])
-    const fileTypes = ["CSV", "PDF"];
+    const fileTypes = ["CSV", "PDF", "DOCX"];
     const handleChange = (file) => {
 
         useUpload(file).then((url) => {

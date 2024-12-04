@@ -23,7 +23,7 @@ export default function SetSources({
     const [sourceType, setSourceType] = useState("");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const fileTypes = ["CSV", "PDF"];
+    const fileTypes = ["CSV", "PDF", "DOCX"];
     const [isUploadActive, setUploadActive] = useState(false);
 
     const mainurl = useRef(null);

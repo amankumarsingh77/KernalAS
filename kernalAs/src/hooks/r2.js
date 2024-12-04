@@ -2,9 +2,9 @@ import S3 from 'aws-sdk/clients/s3.js';
 
 
 export const useUpload = async (file) => {
-    const accountid = "735ef443830adc4a66ae82c3dc64f5b6"
-    const access_key_id = "b8bf9b0d2f8b2b1b5d6190568b88731d"
-    const access_key_secret = "6819513b999b2b644fc71a22f5cc68b6a3b73ee92c2e3b9c6f1a51a41297f0ce"
+    const accountid = "c53b46b5dd5b90e69d3b386ace1821fd"
+    const access_key_id = "7e57d246bc8eb3c497b2786f9157e682"
+    const access_key_secret = "3a06a2feaf43dd10364db4847c2c7846e07c6bd33141f17b8d8f9946ac3ecfc8"
     const s3 = new S3({
         endpoint: `https://${accountid}.r2.cloudflarestorage.com`,
         accessKeyId: `${access_key_id}`,
@@ -15,14 +15,14 @@ export const useUpload = async (file) => {
 
 
     const params = {
-        Bucket: "kernalcloud",
+        Bucket: "studious",
         Key: file.name,
         Body: file
     }
     try {
         const data = await s3.upload(params).promise();
 
-        return "https://pub-e4d5d8d959884f9f90b603fb1695dc4f.r2.dev/" + data.Key;
+        return "https://pub-5ce384a9d75c44faaeb038f397f42478.r2.dev/" + data.Key;
     } catch (err) {
         console.error('Error uploading file to S3:', err);
         throw err; // You may choose to handle the error differently or rethrow it

@@ -37,7 +37,7 @@ def create_bot():
     slug = name.lower().replace(" ", "_")
     existing_bot = BotList.query.filter_by(slug=slug).first()
     if existing_bot:
-        return (make_response(jsonify(message="Bot already exists"), 400),)
+        return make_response(jsonify(message="Bot already exists"), 400)
     new_bot = BotList(name=name, slug=slug)
     db.session.add(new_bot)
     db.session.commit()
